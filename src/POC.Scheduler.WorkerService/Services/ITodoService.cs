@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace POC.Scheduler.WorkerService.Services
 {
-    public interface IValoresBigService 
+    public interface ITodoService 
     {
         Task ObterValoresCobranca();
     }
