@@ -27,11 +27,11 @@ namespace POC.Scheduler.WorkerService.Services
         }
 
         [AutomaticRetry(Attempts = 0)]
-        public async Task ObterValoresCobranca()
+        public async Task ObterTodos()
         {
             try
             {
-                _logger.LogError("**** Obter todos iniciado ****");
+                _logger.LogInformation("**** Obter todos iniciado ****");
 
                 var response = await _httpClient.GetAsync("https://jsonplaceholder.typicode.com/todos");
                 if (!await ValidarResposta(response)) return;

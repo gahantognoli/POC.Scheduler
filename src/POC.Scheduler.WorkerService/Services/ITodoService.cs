@@ -7,6 +7,6 @@ namespace POC.Scheduler.WorkerService.Services
 {
     public interface ITodoService 
     {
-        Task ObterValoresCobranca();
+        Task ObterTodos();
     }
 }

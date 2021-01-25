@@ -39,10 +39,13 @@ namespace POC.Scheduler.WorkerService.Logging
         private void EscreverTextoNoArquivo(string mensagem)
         {
             string caminhoArquivo = "c:\\temp\\log_worker.txt";
-            using (StreamWriter streamWritter = new StreamWriter(caminhoArquivo, true))
+            if (File.Exists(caminhoArquivo))
             {
-                streamWritter.WriteLine(mensagem);
-                streamWritter.Close();
+                using (StreamWriter streamWritter = new StreamWriter(caminhoArquivo, true))
+                {
+                    streamWritter.WriteLine(mensagem);
+                    streamWritter.Close();
+                }
             }
         }
     }
